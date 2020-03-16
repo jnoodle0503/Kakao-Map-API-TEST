@@ -1,0 +1,19 @@
+{
+  "name": "kakao_map_api_test",
+  "version": "1.0.0",
+  "description": "kakao_map_api_test",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node index.js"
+  },
+  "author": "jeonginsoo",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2",
+    "pug": "^2.0.4"
+  }
+}

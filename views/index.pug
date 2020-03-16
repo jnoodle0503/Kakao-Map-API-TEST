@@ -1,0 +1,43 @@
+html
+  
+  head
+    meta(charset="utf-8")
+  body
+    
+    #message
+    #map(style="width:500px; height:500px;")
+    
+
+    script(type="text/javascript", src=`//dapi.kakao.com/v2/maps/sdk.js?appkey=${apiKey}`)
+    script.
+      var container = document.getElementById("map");
+      const message = document.getElementById("message");
+      
+      let lat, lon, latLng;
+
+      
+
+      const success = (position) => {
+        lat = position.coords.latitude;
+        lon = position.coords.longitude;
+  
+        message.innerHTML = lat + "\n" + lon;
+
+        var options = {
+          center: new kakao.maps.LatLng(lat, lon), //지도의 중심좌표.
+          level: 3 //지도의 레벨(확대, 축소 정도)
+        }
+    
+        var map = new kakao.maps.Map(container, options);
+      }
+
+      message.innerHTML = "LOCATING.....";
+      const watchID = navigator.geolocation.watchPosition(success);
+
+      
+
+
+  
+
+
+  
